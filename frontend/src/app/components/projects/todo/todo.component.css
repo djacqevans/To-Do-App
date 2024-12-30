@@ -1,0 +1,331 @@
+
+
+:host {
+      display: block;
+      height: auto;
+      background-color: aliceblue;
+      margin: 20px 0;
+    }
+
+.noLog {
+      text-align: center;
+      font-size: 25px;
+}
+
+    
+/* readme */
+.readme {
+      z-index: 1;
+      position: fixed;
+      font-size: 20px;
+      left: -10px;
+      top: 22.5%;
+      cursor: pointer;
+      background-color: #02c0d9;
+      color: aliceblue;
+      padding: 10px 10px 10px 20px;
+      border-radius: 5px;
+      border: aliceblue solid 3px;
+      transition: all 0.3s ease; /* Animazione fluida */
+    }
+    
+    .readme:hover {
+      background-color: #00796b;
+      transition: background-color 0.5s;
+    }
+    
+    /* readme Text Styling */
+    .readme_container {
+        background-color: rgb(93, 155, 209);
+        padding: 40px;
+        margin: 20px auto 20px auto;
+        border: 1px solid #00796b; 
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        max-width: 800px;
+        
+    }
+    
+    .readme_text {
+      font-family: 'Roboto', sans-serif; 
+      color: aliceblue;
+      line-height: 1.6; 
+    }
+    
+    .readme_text .section {
+      margin-bottom: 50px;
+    }
+    
+    .readme_text h1, .readme_text h2 {
+      color: #63cec2;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    
+    .readme_text p, .readme_text ul, .readme_text ol {
+      margin-bottom: 15px;
+    }
+    
+    /* List Styling */
+    .readme_text ul, .readme_text ol {
+      padding-left: 20px;
+    }
+    
+    .readme_text ul li {
+      margin: 10px 0;
+      list-style-type: disc; /* Keep bullets consistent */
+    }
+    
+    .readme_text ol li {
+      margin: 10px 0;
+      list-style-type: decimal; /* For ordered lists */
+    }
+    
+    .readme_text code {
+      background-color: #00796b;
+      color: aliceblue;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+        
+/* app styles */
+h1 {
+      text-align: center;  
+      font-size: 40px;  
+      color: aliceblue;
+      background-color: blueviolet;
+      cursor: default;
+      margin: 0 0 20px 0;
+}
+
+h2 {
+      font-size: 35px;
+      cursor: default;
+}
+
+#main {
+      display: flex;
+      justify-content: space-evenly;
+}
+
+#container-list {
+      display: block;
+      width: 45%;
+}
+
+#container-done {
+      display: block;
+      width: 45%;
+}
+
+.task-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; 
+}
+
+button {
+      background-color: blueviolet;
+      color: aliceblue;
+      text-decoration: none;
+      border: none;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 15px;
+}
+
+button:hover {
+      cursor: pointer;
+      background-color: rgb(169, 57, 225);
+      color: rgb(255, 225, 32);
+      transition: background-color 1s, color 1s;
+}
+
+.check {
+      width: 1.15em;
+      height: 1.15em;
+      border: 0.15em solid currentColor;
+      border-radius: 0.15em;
+      transform: translateY(-0.075em);
+      color: aquamarine;
+}
+
+textarea.task {
+      border: none; 
+      outline: none; 
+      background: none;
+      font-size: 16px; 
+      width: 100%; 
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px;
+      height: 100%;
+      width: 80%;
+}
+
+textarea.task:hover {
+      background-color: rgb(255, 209, 60);
+      border-radius: 10px;
+      transition: background-color 1s;
+}
+    
+textarea.task:focus {
+      border-bottom: 1px solid #000; 
+      outline: none;
+}
+
+@keyframes toast {
+      0% {
+        left: -300px; 
+        top: 20px;    
+      }
+      50% {
+        left: 60px;  
+        top: 20px;
+      }
+      100% {
+            left: -300px; 
+            top: 20px;   
+      }
+}
+    
+#toast {
+      max-width: 200px;
+      display: none; 
+      position: fixed; 
+      left: -300px; 
+      top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      animation-name: toast;
+      animation-duration: 5s;
+      animation-fill-mode: forwards; 
+      margin: 140px 0 0 0;
+      color: aliceblue;
+}
+    
+.menu {
+      display: none;
+}
+
+
+
+@media (min-width: 320px) {
+
+      h1 {
+            padding: 10px;
+            font-size: 30px;
+      }
+
+      h2 {
+            font-size: 20px;
+      }
+
+      #main {
+            display: grid;
+            gap: 20px;
+            grid-template-areas: 
+            "to-do"
+            "done" ;
+      }
+
+      #container-list {grid-area: to-do;}
+      #container-done {grid-area: done;}
+
+      #container-list, #container-done {
+            width: 100%;
+            min-height: 300px;
+            text-align: center;
+      }
+
+      nav a {
+            display: none;
+      }
+
+      .menu {
+            display: block;
+      }
+}
+
+@media (min-width: 576px) {
+      h1 {
+            text-align: center;  
+            font-size: 35px;  
+            padding: 10px;
+      }
+      
+      h2 {
+            font-size: 25px;
+      }
+      
+      #main {
+            display: flex;
+            justify-content: space-evenly;
+      }
+      
+      #container-list {
+            display: block;
+            width: 45%;
+      }
+      
+      #container-done {
+            display: block;
+            width: 45%;
+      }
+      
+      .task-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+      }
+}
+
+@media (min-width: 768px) {
+      button {
+            font-size: 20px;
+      }
+
+      textarea.task {
+            font-size: 20px;
+      }
+}
+
+@media (min-width: 992px) {
+      h1 {
+            padding: 15px;
+            font-size: 45px;
+      }
+
+      h2 {
+            font-size: 35px;
+      }
+
+      button {
+            font-size: 25px;
+      }
+
+      textarea.task {
+            font-size: 20px;
+      }
+}
+
+@media (min-width: 1200px) {
+      h1 {
+            padding: 15px;
+            font-size: 50px;
+      }
+
+      h2 {
+            font-size: 40px;
+      }
+
+      button {
+            font-size: 30px;
+      }
+
+      textarea.task {
+            font-size: 25px;
+      }
+}
